@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <%- include('../layout/head') %>
+    <style>
+        .main-result{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;  
+            flex-wrap: nowrap;      
+            padding: 1rem;    
+        }
+        .title{width: 100%;}
+        .display{margin: 1rem 0;}
+        .display img{ width: 100%;}
+        .display:hover{
+            background: #24C166;
+            cursor: pointer;
+        }
+        .remove{
+            margin-top: 2rem;
+            height: 55vh;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <%- include('../layout/header') %>
+            <main class="main-result">
+                <div class="title">
+                    <h1>Resultados:</h1>
+                    <a class="btn btn-result" href="/">Voltar para a página imicial</a>
+                </div>
+                <div class=".container">
+                    <% if(archive.length==0) {%>
+                        <h2 class="remove">Talvez este perfil seja privado ! </h2>
+                        <%} else{%>
+                            <% archive.forEach(({src})=> { %>
+                                <div class="display">
+                                    <a href="<%= src %>">
+                                        <img src="<%= src %>" alt="">
+                                    </a>
+                                </div>
+                        <% }) %>
+                    <%}%>
+                </div>
+            </main>
+            <%- include('../layout/footer') %>
+    </div>
+
+</body>
+
+</html>

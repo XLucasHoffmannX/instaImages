@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <%- include('./layout/head') %>
+</head>
+
+<body>
+    <div id="container">
+        <%- include('./layout/header') %>
+        <main class="main">
+            <div class="display">
+                <form class="form" action="/pupGenerator" method="GET">
+                    <label for="link">Insira um link de perfil:</label>
+                    <input type="url" name="link" id="link" required>
+                    <button type="submit">Gerar imagens</button>
+                </form>
+            </div>
+        </main>
+        <%- include('./layout/footer') %>
+    </div>
+
+</body>
+
+</html>

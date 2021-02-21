@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <%- include('../layout/head') %>
+</head>
+
+<body>
+    <div id="container">
+        <%- include('../layout/header') %>
+            <main class="main">
+                <div class="display">
+                    <div class="generator">
+                        <a class="btn btn-back" href="/">👈 Voltar para a página inicial</a>
+                        <div class="timeout">
+                            <div class="spin"></div>
+                            <p>Aguarde estamos gerando as imagens!</p>
+                        </div>
+                        <a class="btn btn-result" href="/results">Ver resultado 👉</a>
+                    </div>
+                </div>
+            </main>
+            <%- include('../layout/footer') %>
+    </div>
+    <script>
+        const loader = document.querySelector('.timeout');
+        const redirect = document.querySelector('.btn-result');
+        redirect.style.display = 'none';
+        setTimeout(()=>{
+            loader.style.display = 'none'
+            redirect.style.display = ''
+        }, 10000)
+    </script>
+</body>
+
+</html>
